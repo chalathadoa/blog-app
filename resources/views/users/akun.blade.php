@@ -19,7 +19,7 @@
 								<p class="text-sm leading-6 text-gray-900">{{ $user->role }}</p>
 							</div>
 						</div>
-						<div class="hidden shrink-0 items-center space-x-2 sm:flex sm:flex-col sm:items-end">
+						<div class="hidden shrink-0 items-center space-x-2 sm:flex sm:flex-col sm:items-end" style="display: inline">
 							<a href="{{ route('akun.edit', $user->username) }}" class="rounded-md self-center mb-2 bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline hover:outline-1 hover:outline-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">Edit</a>
 							<form action="{{ route('akun.delete', $user->username) }}" method="POST" style="display:inline;">
 								@csrf

@@ -24,7 +24,7 @@
 					<div class="col-span-full">
 						<label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
 						<div class="mt-2">
-							<input type="text" name="name" id="username" autocomplete="name" class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 placeholder:text-gray-400 focus:ring-2 focus:ring-gray-800 sm:text-sm sm:leading-6" placeholder="janesmith">
+							<input type="text" name="name" id="name" autocomplete="name" class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 placeholder:text-gray-400 focus:ring-2 focus:ring-gray-800 sm:text-sm sm:leading-6" placeholder="janesmith">
 						</div>
 					</div>
 					<div class="col-span-full">
