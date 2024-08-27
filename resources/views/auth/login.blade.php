@@ -8,7 +8,7 @@
     </div>
   
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form action="/login" class="space-y-6" action="#" method="POST">
+      <form action="/login" class="space-y-6" method="POST">
 				@csrf
         <div>
           <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
@@ -27,7 +27,7 @@
         </div>
   
         <div>
-          <button type="submit" class="flex w-full justify-center rounded-md bg-black px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">Login in</button>
+          <button type="submit" class="flex w-full justify-center rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline hover:outline-1 hover:outline-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">Login in</button>
         </div>
       </form>
     </div>

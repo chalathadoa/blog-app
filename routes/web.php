@@ -17,14 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [HomeController::class, 'index'])->name('beranda');
 Route::get('/login', [SessionController::class, 'index'])->name('login');
 Route::post('/login', [SessionController::class, 'login']);
 Route::get('/beranda', [HomeController::class, 'index'])->name('beranda');
-Route::get('/post', [PostController::class, 'index'])->middleware('auth')->name('post');
-Route::post('/post', [PostController::class, 'savePost'])->middleware('auth');
-Route::get('/akun', [AkunController::class, 'index'])->middleware('auth')->name('akun');
-Route::post('/akun', [AkunController::class, 'saveUser'])->middleware('auth');
+Route::get('/post', [PostController::class, 'index'])->name('post');
+Route::post('/post', [PostController::class, 'save_post']);
+Route::get('/akun', [AkunController::class, 'index'])->name('akun');
+Route::get('/add-user', [AkunController::class, 'add_user'])->name('add-user');
+Route::post('/save-user', [AkunController::class, 'store'])->name('store');
+Route::get('/akun/edit/{username}', [AkunController::class, 'edit_user'])->name('akun.edit');
+Route::post('/akun/update/{username}', [AkunController::class, 'update'])->name('akun.update');
+Route::delete('/akun/delete/{username}', [AkunController::class, 'destroy'])->name('akun.delete');

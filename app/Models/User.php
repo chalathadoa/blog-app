@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Carbon\Traits\Timestamp;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -15,6 +16,9 @@ class User extends Authenticatable
     protected $table = 'account';
 
     protected $primaryKey = 'username';
+    protected $keyType = 'string';
+    public $incrementing = false;
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *

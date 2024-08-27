@@ -8,6 +8,7 @@ class PostController extends Controller
 {
     function index()
     {
+        $this->authorize('admin', 'author');
         return view('post');
     }
 }
