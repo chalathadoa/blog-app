@@ -11,19 +11,20 @@ class PostController extends Controller
 {
     function index()
     {
-        // $this->authorize('admin', 'author');
         $posts = Post::all();
         return view('post.post', compact('posts'));
     }
 
     public function create()
     {
+        $this->authorize('admin', 'author');
         $accounts = User::all();
         return view('post.create', compact('accounts'));
     }
 
     public function store(Request $request)
     {
+        $this->authorize('admin', 'author');
         $request->validate([
             'title' => 'required',
             'content' => 'required',
@@ -37,11 +38,12 @@ class PostController extends Controller
             'username' => $request->username,
         ]);
 
-        return redirect()->route('post.post')->with('success', 'Post created successfully.');
+        return redirect()->route('post')->with('success', 'Post created successfully.');
     }
 
     public function edit($idpost)
     {
+        $this->authorize('admin', 'author');
         $post = Post::findOrFail($idpost);
         $accounts = User::all();
         return view('post.edit', compact('post', 'accounts'));
@@ -49,10 +51,10 @@ class PostController extends Controller
 
     public function update(Request $request, $idpost)
     {
+        $this->authorize('admin', 'author');
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'date' => 'required|date',
             'username' => 'required|exists:account,username',
         ]);
 
@@ -61,18 +63,19 @@ class PostController extends Controller
         $post->update([
             'title' => $request->title,
             'content' => $request->content,
-            'date' => $request->date,
+            'date' => Carbon::now(),
             'username' => $request->username,
         ]);
 
-        return redirect()->route('post.post')->with('success', 'Post updated successfully.');
+        return redirect()->route('post')->with('success', 'Post updated successfully.');
     }
 
     public function destroy($idpost)
     {
+        $this->authorize('admin', 'author');
         $post = Post::findOrFail($idpost);
         $post->delete();
 
-        return redirect()->route('post.post')->with('success', 'Post deleted successfully.');
+        return redirect()->route('post')->with('success', 'Post deleted successfully.');
     }
 }

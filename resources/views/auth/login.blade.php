@@ -1,6 +1,19 @@
 @extends('layout/header')
 
 @section('content')
+	@if (session('success'))
+			<p>{{ session('success') }}</p>
+	@endif
+
+	@if ($errors->any())
+			<div>
+					<ul>
+							@foreach ($errors->all() as $error)
+									<li>{{ $error }}</li>
+							@endforeach
+					</ul>
+			</div>
+	@endif
 	<div class="flex min-h-full flex-col justify-center px-6 py-24 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
 			<img class="h-8 w-auto mx-auto" src="{{ asset('images/logo.png') }}" alt="https://www.flaticon.com/free-icons/blog">
@@ -27,7 +40,7 @@
         </div>
   
         <div>
-          <button type="submit" class="flex w-full justify-center rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline hover:outline-1 hover:outline-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">Login in</button>
+          <button type="submit" class="flex w-full justify-center rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline hover:outline-1 hover:outline-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">Log in</button>
         </div>
       </form>
     </div>

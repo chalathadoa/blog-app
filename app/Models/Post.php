@@ -12,6 +12,7 @@ class Post extends Model
     protected $table = 'post';
     protected $primaryKey = 'idpost';
     public $incrementing = true;
+    public $timestamps = false;
 
     protected $fillable = [
         'title',

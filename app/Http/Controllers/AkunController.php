@@ -16,11 +16,13 @@ class AkunController extends Controller
 
     function add_user()
     {
+        $this->authorize('admin');
         return view('users/add_user');
     }
 
     public function store(Request $request)
     {
+        $this->authorize('admin');
         $request->validate([
             'username' => 'required|unique:account|max:45',
             'password' => 'required|min:6',
@@ -40,12 +42,14 @@ class AkunController extends Controller
 
     public function edit_user($username)
     {
+        $this->authorize('admin');
         $akun = User::where('username', $username)->firstOrFail();
         return view('users.edit', compact('akun'));
     }
 
     public function update(Request $request, $username)
     {
+        $this->authorize('admin');
         $request->validate([
             'password' => 'sometimes|min:6',
             'name' => 'required|max:45',
@@ -65,6 +69,7 @@ class AkunController extends Controller
 
     public function destroy($username)
     {
+        $this->authorize('admin');
         $akun = User::findOrFail($username);
         $akun->delete();
 

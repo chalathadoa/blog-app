@@ -22,9 +22,9 @@
                     </div>
                 </div>
                 <div class="col-span-full">
-                    <label for="role" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+                    <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
                     <div class="mt-2">
-                        <select id="role" name="role" autocomplete="role" class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 placeholder:text-gray-400 focus:ring-2 focus:ring-gray-800 sm:text-sm sm:leading-6">
+                        <select id="username" name="username" class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 placeholder:text-gray-400 focus:ring-2 focus:ring-gray-800 sm:text-sm sm:leading-6">
                             @foreach ($accounts as $account)
                               <option value="{{ $account->username }}">{{ $account->username }}</option>
                             @endforeach
