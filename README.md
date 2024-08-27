@@ -1,3 +1,22 @@
+<h1>HOW TO OPEN THE PROJECT </h1>
+<b>Requirement:</b>
+<ul>
+    <li>PHP</li>
+    <li>Composer</li>
+    <li>NPM</li>
+</ul>
+<b>To open the project:</b>
+<ul>
+    <li>1. Clone this github repo at https://github.com/chalathadoa/blog-app.git</li>
+    <li>Type command at CMD: </li>
+    <li>2. composer install</li>
+    <li>3. npm install</li>
+    <li>4. npm run dev</li>
+    <li>Open other terminal</li>
+    <li>5. php artisan key:generate</li>
+    <li>6. php artisan serve</li>
+</ul>
+<b>The link is opened from the php artisan server which is usually on port 8000</b>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
